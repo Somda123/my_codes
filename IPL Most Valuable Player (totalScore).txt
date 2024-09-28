@@ -1,0 +1,77 @@
+
+function  calculateMVP(players) {
+
+    for(let i =0; i<players.length; i++){
+        players[i].runs = players[i].runs + (25 * players[i].wickets) + (10 * players[i].catches);
+    }
+
+    // for(let i=0; i < players.length; i++){
+    let i =0;
+        let j = i + 1;
+        while(j < players.length){
+            if(players[i].runs >= players[j].runs ){
+                
+
+            }
+            else{
+                players[i] = players[j]
+
+            }
+            j++;
+
+        }
+    return players[i].name;
+    // }
+}
+
+
+
+
+const input = require('readline-sync');
+let n = input.questionInt('Enter the Total player Numbers :- ');
+let players =[];
+for (let i =0; i < n ; i++){
+ let object = {};
+ object.name = input.question('Type the Player Nmae :- ');
+ object.runs = input.questionInt('Type the Player runs :- ');
+ object.wickets = input.questionInt('Type the Player wickets :- ');
+ object.catches = input.questionInt('Type the Player catches :- ');
+ players.push(object);
+}
+// console.log(players);
+
+console.log( calculateMVP(players));
+
+
+//// test case - 1
+// let players =  [
+//     { name: "Virat Kohli", runs: 500, wickets: 2, catches: 5 },
+//     { name: "Rohit Sharma", runs: 450, wickets: 0, catches: 3 },
+//     { name: "Jasprit Bumrah", runs: 100, wickets: 15, catches: 1 }
+// ]
+
+// let players = [
+//     { name: "MS Dhoni", runs: 300, wickets: 1, catches: 7 },
+//     { name: "Hardik Pandya", runs: 400, wickets: 5, catches: 2 },
+//     { name: "KL Rahul", runs: 550, wickets: 0, catches: 1 }
+// ]
+
+
+// let players = [
+//     { name: "Shikhar Dhawan", runs: 450, wickets: 1, catches: 5 },
+//     { name: "Ravindra Jadeja", runs: 250, wickets: 8, catches: 3 }
+// ]
+
+
+// let players = [
+//     { name: "Rishabh Pant", runs: 300, wickets: 0, catches: 10 },
+//     { name: "Bhuvneshwar Kumar", runs: 100, wickets: 10, catches: 0 }
+// ]
+
+// let players= [
+//     { name: "Kane Williamson", runs: 400, wickets: 0, catches: 5 },
+//     { name: "David Warner", runs: 400, wickets: 0, catches: 5 }
+// ]
+
+
+// console.log( calculateMVP(players));

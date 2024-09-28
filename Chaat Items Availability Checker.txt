@@ -1,0 +1,98 @@
+// Chaat Items Availability Checker
+
+ function getAvailableChaatItems(chaatItems, availableIngredients) {
+
+let abc, cde,efg =[],c=0,rec=[];
+
+let i =0;
+while(i<chaatItems.length){
+    abc =chaatItems[i];
+    cde =abc.ingredients;
+    c=0;
+    let j =0;
+    while(j<availableIngredients.length)
+        {
+            
+        let k=0;
+        while(k < cde.length){
+            if(availableIngredients[j] === cde[k]){
+                c+=1;
+                rec.push(cde[k])
+            }else{
+ c=c;
+            }
+        k++; }
+   
+        j++; } 
+        if(cde.length === c)
+        {       
+        //   efg.push(abc.name)
+          efg.push(chaatItems[i].name)
+        }
+    i++;
+}
+return efg ;
+
+ }
+
+const input =require('readline-sync');
+let n = input.questionInt('Enter the chaatItems length :- ');
+let chaatItems =[];
+for(let i =0; i<n; i++){
+let object = {};
+object.name =input.question('enter the name :- ');
+ingredients = input.question('enter the ingredients :- ');
+object.ingredients =ingredients.split(',')
+chaatItems.push(object);
+}
+console.log(chaatItems);
+let m = input.questionInt('Enter the length of availableIngredients :- ');
+let availableIngredients =[];
+for(let i =0; i<m; i++){
+    availableIngredients[i] = input.question('Enter the ingredients :- ');
+}
+
+console.log(getAvailableChaatItems(chaatItems, availableIngredients));
+
+
+
+
+// const chaatItems = [
+//     { name: "Pani Puri", ingredients: ["puri", "pani", "mint", "potato"] },
+//     { name: "Bhel Puri", ingredients: ["puri", "sev", "potato", "onion", "tamarind"] },
+//     { name: "Dahi Puri", ingredients: ["puri", "dahi", "potato", "sev"] },
+//     { name: "Aloo Tikki", ingredients: ["potato", "onion", "chaat masala"] }
+// ];
+// const availableIngredients = ["puri", "pani", "mint", "potato", "sev", "dahi"];
+
+
+// const chaatItems = [
+//     { name: "Pani Puri", ingredients: ["puri", "pani", "mint", "potato"] },
+//     { name: "Bhel Puri", ingredients: ["puri", "sev", "potato", "onion", "tamarind"] },
+//   { name: "Dahi Puri", ingredients: ["puri", "dahi", "potato", "sev"] },
+//     { name: "Aloo Tikki", ingredients: ["potato", "onion", "chaat masala"] }
+// ];
+// const availableIngredients = ["puri", "sev", "dahi", "potato", "onion", "chaat masala", "tamarind"];
+
+
+// const chaatItems = [
+//     { name: "Pani Puri", ingredients: ["puri", "pani", "mint", "potato"] },
+//     { name: "Bhel Puri", ingredients: ["puri", "sev", "potato", "onion", "tamarind"] },
+//     { name: "Dahi Puri", ingredients: ["puri", "dahi", "potato", "sev"] },
+//     { name: "Aloo Tikki", ingredients: ["potato", "onion", "chaat masala"] }
+// ];
+// const availableIngredients = ["pani", "mint", "tamarind"];
+
+
+
+// const chaatItems = [
+//     { name: "Pani Puri", ingredients: ["puri", "pani", "mint", "potato"] },
+//     { name: "Bhel Puri", ingredients: ["puri", "sev", "potato", "onion", "tamarind"] },
+//     { name: "Dahi Puri", ingredients: ["puri", "dahi", "potato", "sev"] },
+//     { name: "Aloo Tikki", ingredients: ["potato", "onion", "chaat masala"] }
+// ];
+// const availableIngredients = ["puri", "dahi", "sev", "potato"];
+
+
+
+// console.log(getAvailableChaatItems(chaatItems, availableIngredients));

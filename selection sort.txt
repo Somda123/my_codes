@@ -1,0 +1,27 @@
+
+console.log(("\nSELECTION SORT\n"));
+const input = require('readline-sync');
+let n = input.questionInt('Enter the lnegth of the array :- ');
+let Array =[];
+for (let i = 0; i < n ; i++){
+  Array.push(input.questionInt(`Enter the element ${i + 1} :- `));
+}
+console.log(Array);
+
+for(let i = 0 ; i<n-1 ; i++){
+// console.log(Array[n-1-i]);
+for(let j=i+1; j<n; j++){
+  if (Array[i]<Array[j]){
+        //  Array[i]=Array[i];
+  }else{
+    let t = Array[i];
+    Array[i]=Array[j];
+    Array[j] =t;
+  }
+}
+console.log(Array[i]);
+
+}
+console.time("Array");
+console.log(Array);
+console.timeEnd("Array");

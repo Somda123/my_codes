@@ -1,0 +1,57 @@
+
+function  updatePaymentStatus(orders, targetOrderId, newStatus){
+for(let i=0; i<orders.length; i++){
+    if (orders[i].orderId === targetOrderId){
+       
+            orders[i].paymentDetails.status = newStatus;
+           
+               break;
+    }
+}
+
+return orders;
+
+}
+
+
+
+const input =require('readline-sync');
+let n = input.question('Enter the length of array :-');
+let orders =[];
+for (let i =0; i<n; i++){
+    let object = {};
+    object.orderId = input.questionInt('enter the orderId :- ');
+    object.city = input.question('enter the city :- ');
+    object.productName = input.question('enter the productName :- ');
+   let  paymentDetails = {};
+   paymentDetails.method =input.question('enter the payment method :- '); 
+   paymentDetails.method =input.question('enter the transactionId :- ');
+   paymentDetails.status =input.question('enter the status :- ');
+   object.paymentDetails =paymentDetails;
+   orders.push(object);
+}
+let targetOrderId =input.questionInt('Enter the targetOrderId :- ');
+let newStatus =input.questionInt('Enter the newStatus :- ');
+
+console.log(updatePaymentStatus(orders, targetOrderId, newStatus));
+
+
+// // test case - 1
+// const orders = [ 
+//     { orderId: 101, city: "Mumbai", productName: "Laptop", paymentDetails: { method: "Credit Card", transactionId: "tx123", status: "Pending" } },
+//     { orderId: 102, city: "Delhi", productName: "Phone", paymentDetails: { method: "PayPal", transactionId: "pay456", status: "Success" } }
+//   ];
+//   const targetOrderId = 101;
+//   const newStatus = "Success";
+  
+
+// // test case -2 
+// const orders = [
+//     { orderId: 103, city: "Chennai", productName: "Tablet", paymentDetails: { method: "Credit Card", transactionId: "tx789", status: "Pending" } },
+//     { orderId: 104, city: "Chennai", productName: "Charger", paymentDetails: { method: "PayPal", transactionId: "pay012", status: "Failed" } }
+//   ];
+//   const targetOrderId = 105; 
+//   const newStatus = "Success";
+  
+
+// console.log(updatePaymentStatus(orders, targetOrderId, newStatus));

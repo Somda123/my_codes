@@ -1,0 +1,23 @@
+
+//same string count 
+const input = require('readline-sync');
+let A = input.question('Enter the string :- ');
+// let A = "110011110001111"
+let c=0,c1=0;
+let m,n;
+for(let i of A){
+  
+
+   if(i === '1'){
+    c1+=1;
+    m=c1;
+
+
+  }else{
+    c1=0;
+  }
+  
+}
+
+  console.log('here','1', 'is',m, 'time');
+

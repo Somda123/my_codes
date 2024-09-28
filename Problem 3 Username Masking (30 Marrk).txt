@@ -1,0 +1,42 @@
+// Problem 3: Username Masking (30 Marks)
+
+function maskUsername(username){
+username = username.split("");
+let i =0;
+while(i<username.length){
+switch(true){
+
+    case (username[i] === 'a') :
+    username [i] = '@'
+    break;
+    case (username[i] === 's') :
+    username [i] = '$'
+    break;
+    case (username[i] === 'S') :
+    username [i] = '$'
+    break;
+    case (username[i] === 'i') :
+    username [i] = '!'
+    break;
+    case (username[i] === 'o') :
+    username [i] = '0'
+    break;
+    case (username[i] === 'O') :
+    username [i] = '0'
+    break;
+    case (username[i] === 'E') :
+    username [i] = '3'
+    break;
+    default :
+
+}
+i++;
+}
+   return username.join('');
+
+
+}
+
+const input = require('readline-sync');
+let username = input.question('Enter the username :- ');
+console.log(maskUsername(username));

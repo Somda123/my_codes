@@ -1,0 +1,21 @@
+var isThree = function(n) {
+    let arr =[];
+    let i = 1;
+    while (i<=n){
+ if (n%i ==0){
+  arr.push(i)
+    }
+i++;
+    }
+    return arr.length===3 ;
+   
+};
+
+const input =require('readline-sync');
+let number = input.questionInt("Enter the Number : ");
+let found = isThree(number);
+console.log(found);
+
+
+
+https://aquamarine-sfogliatella-1a3b6f.netlify.app/

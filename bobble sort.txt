@@ -1,0 +1,84 @@
+
+// console.log("\nBOBBULE SORT\n");
+// const input = require('readline-sync');
+// let n =input.questionInt('enter the length of array :- ');
+
+// let t, arr =[];
+// for(let i =0; i<n; i++){
+//     arr[i]=input.questionInt(`enter the element ${i + 1} :- `);
+// }
+
+// for(let i=0; i<n; i++){
+// // for(let j= i+1; j<n -i ; j++)
+// let j=i+1;
+// while(j<n)
+//     {
+//     if (arr[i]>arr[j]){
+     
+
+//     }else{
+//       t = arr[i];
+//       arr[i] = arr[j]
+//      arr[j] =t; 
+//     }
+//     j++;
+// }
+
+
+//    console.log(arr[i]);
+  
+
+// }
+// arr.reverse();
+// console.log(arr);
+// arr= arr.toString();
+// console.log(arr);
+
+
+
+
+
+// console.log("\nBUBBLE SORT");
+// const input = require('readline-sync').questionInt;
+
+// let n = input('Enter the length of the array: ');
+// let arr = [];
+
+// // Input array elements
+// for (let i = 0; i < n; i++) {
+//     arr.push(input(`Enter element ${i + 1}: `));
+// }
+
+// // Bubble sort algorithm
+// for (let i = 0; i < n - 1; i++) {
+//     for (let j = 0; j < n - i - 1; j++) {
+//         if (arr[j] > arr[j + 1]) {
+//             // Swap arr[j] and arr[j + 1]
+//             let temp = arr[j];
+//             arr[j] = arr[j + 1];
+//             arr[j + 1] = temp;
+//         }
+//     }
+// }
+
+// // Print sorted array
+// console.log("Sorted array:");
+// console.log(arr);
+// console.log(arr.join('')); // Join array elements with ', ' and print
+// console.log(arr.map(Number));
+
+
+
+// console.log(("\nSTACK\N"));
+// const input = require('readline-sync');
+// let n = input.questionInt('Enter the lnegth of the array :- ');
+// let Array =[];
+// for (let i = 0; i < n ; i++){
+//   Array.push(input.questionInt(`Enter the element ${i + 1} :- `));
+// }
+// console.log(Array);
+
+// for(let i = 0 ; i<n ; i++){
+// console.log(Array[n-1-i]);
+// }
+

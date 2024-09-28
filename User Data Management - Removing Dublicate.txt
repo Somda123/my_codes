@@ -1,0 +1,55 @@
+// User Data Management - Removing Duplicates
+
+function removeDuplicateUsers(users) {
+    // let abc,cde,efg;
+    for(let i=0; i<users.length; i++){
+       let j = i + 1;
+       while (j<users.length){
+        if(users[i].email === users[j].email){
+            users.splice(j,1);
+        }
+        j++;
+       } 
+
+    }
+return users;
+}
+
+const input =require('readline-sync');
+let n=input.questionInt('Enter the length of array:-');
+let users =[];
+for(let i = 0; i<n; i++){
+    let object ={};
+    object.name = input.question('Enter the object.name :- ');
+    object.email =input.question('enter the object.email :- ');
+    object.age =input.questionInt('enter the object.age :- ');
+    object.city =input.question('enter the object.city :- ');
+    users.push(object);
+}
+
+console.log(removeDuplicateUsers(users));
+
+
+// const users = [
+//     { name: "Rahul", email: "rahul@example.com", age: 35, city: "Bangalore" },
+//      { name: "Priya", email: "priya@example.com", age: 28, city: "Mumbai" },
+//      { name: "Rahul", email: "rahul@example.com", age: 30, city: "Chennai" }, 
+//       { name: "Amit", email: "amit@example.com", age: 26, city: "Delhi" },
+//       { name: "Priya", email: "priya@example.com", age: 28, city: "Delhi" }   
+//     ];
+   
+
+// let users = [ { name: "Rahul", email: "rahul@example.com", age: 35, city: "Bangalore" },
+// { name: "Rahul", email: "rahul.kapoor@example.com", age: 35, city: "Bangalore" }, // Different email, unique user
+
+// ]
+
+
+// let users = [
+//     { name: "Minal", email: "iamawesome@example.com", age: 21, city: "Mumbai" },
+//      { name: "Meenal", email: "iamawesome@example.com", age: 21, city: "Mumbai" } //Duplicate email, keeping the first one
+//    ]
+  
+
+
+// console.log(removeDuplicateUsers(users));

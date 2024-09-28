@@ -1,0 +1,24 @@
+var addDigits = function(num) {
+    let sum = 0;
+    while(num>0){
+        let r = num%10;
+        sum += r;
+        num = Math.floor(num/10);
+        if(num===0){
+          if(sum <=9){
+            break;
+            // return sum;
+          }else{
+            num = sum;
+            sum = 0;
+          }
+        }
+        
+    }
+    return sum;
+};
+
+const input =require('readline-sync');
+let number = input.questionInt("Enter the Number : ");
+let found = addDigits(number);
+console.log(found);

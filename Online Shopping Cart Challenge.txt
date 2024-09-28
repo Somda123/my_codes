@@ -1,0 +1,81 @@
+
+
+// Online Shopping Cart Challenge
+//..............Problem 4: Online Shopping Cart Challenge (30 Marks)
+function addItemToCart(cart,cartitems) {
+    let c=0;
+    
+    //   for(let i=0; i<cartitems.length; i++)
+    // if(number === 1){
+        let i=0;
+        while(i<cartitems.length)
+            {
+            c+=1;
+    
+            if (cartitems[i].id === cart.id){
+                 cartitems[i] = cart;
+                 break;
+                // console.log(c);
+            } else if(i ){
+    
+            } i++;
+    
+          }
+          if(i === cartitems.length)
+          {
+            cartitems.push(cart);
+          }
+      return cartitems;
+
+    }
+    
+
+
+function removeItem(cartitems,RemoveNumber){
+let i=0;
+    while(i<cartitems.length){
+        if(cartitems[i].id === RemoveNumber){
+            cartitems.splice(i,1);
+            return cartitems;
+        }
+        i++;
+    }
+
+}
+
+
+
+
+
+
+// console.log('press 1: Remove from Cart');
+const cartitems = [
+    { id: 1, name: "Phone", price: 20000, quantity: 1 },
+    { id: 2, name: "Headphones", price: 5000, quantity: 2 },
+    { id: 3, name: "Power Bank", price: 1000, quantity: 1 }
+  ];
+const input = require('readline-sync');
+let number = input.questionInt('press 1: Add to Cart\npress 2: Remove from Cart\nenter your choice :-');
+if (number === 1) {
+
+    let n =input.questionInt('Enter the add items carts nmbers:- ')
+    let cart;
+    let i=1;
+    while(i<=n){
+         cart ={};
+         cart.id = input.questionInt('Enter the id :- ');
+         cart.name = input.question('Enter the name :- ');
+         cart.price = input.questionInt('Enter the price :- ');
+         cart.quantity = input.questionInt('Enter the quantity :- ');
+         i++;
+    
+    }
+    // console.log(cart);
+    console.log(addItemToCart(cart,cartitems));
+    
+}
+else  {
+    let RemoveNumber =input.questionInt('Enter the remove Item Number :- ')
+    console.log(removeItem(cartitems,RemoveNumber));
+
+}

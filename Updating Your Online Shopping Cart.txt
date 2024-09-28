@@ -1,0 +1,72 @@
+
+// Updating Your Online Shopping Cart (30 marks)
+
+function  updateCartQuantity(cartitems,itemId,newQuantity){
+
+    let c =0;
+let i =0; 
+while(i < cartitems.length){
+    // if(cartitems[i].id === itemId){
+    //     cartitems[i].quantity = newQuantity;
+    //     break;
+    // }
+    switch(true){
+        case (cartitems[i].id === itemId && newQuantity != 0):
+            c+=1;
+            cartitems[i].quantity = newQuantity;
+            break;
+        case (cartitems[i].id === itemId && newQuantity === 0):
+            c+=1;
+            cartitems.splice(i,1);
+            break;
+
+          case (  c != 1 && cartitems.length === i +1):
+            let ob = {};
+            ob.id=itemId;
+            ob.quantity = newQuantity;
+            cartitems.push(ob);
+            default :
+
+    }
+    i++;
+}
+
+return cartitems
+
+}
+
+
+const input = require('readline-sync');
+let n = input.questionInt("Enter the length of cart :- ");
+let cartitems =[];
+for(let i = 0; i<n; i++){
+    let object = {};
+    object.id = input.questionInt('Enter the id :-');
+    object.quantity = input.questionInt('Enter the quantity :-');
+ cartitems.push(object);
+}
+let itemId =input.questionInt('Enter the itemId :- ');
+let newQuantity =input.questionInt('Enter the new quantity :- ');
+
+console.log(updateCartQuantity(cartitems,itemId,newQuantity));
+
+
+// // test case -1
+// let cartitems = [{ id: 10, quantity: 2 }, { id: 20, quantity: 1 }]
+// itemId = 10
+// newQuantity = 3
+
+
+// // test case -2
+// const cartitems = [{ id: 10, quantity: 2 }, { id: 20, quantity: 1 }];
+// itemId = 30;
+// newQuantity = 5;
+
+
+// // test case -3
+// cartitems = [{ id: 10, quantity: 2 }, { id: 20, quantity: 1 }];
+// itemId = 20;
+// newQuantity = 0;
+
+
+// console.log(updateCartQuantity(cartitems,itemId,newQuantity));
